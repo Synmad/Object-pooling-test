@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Obstacle
+  - Refresh
+  - Spawn
   layers:
   - Default
   - TransparentFX

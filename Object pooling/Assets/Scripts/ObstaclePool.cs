@@ -13,10 +13,7 @@ public class ObstaclePool : MonoBehaviour
     {
         if (Instance != null && Instance != this) { Destroy(this); }
         else { Instance = this; }
-    }
 
-    private void Start()
-    {
         pooledObstacles = new List<GameObject>();
         GameObject tmp;
 

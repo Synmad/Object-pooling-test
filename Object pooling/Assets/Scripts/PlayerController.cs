@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -7,6 +8,8 @@ public class PlayerController : MonoBehaviour
     bool isGrounded;
 
     Rigidbody2D rb;
+
+    public static Action onPlayerDie;
 
     private void Awake() { rb = GetComponent<Rigidbody2D>(); }
 
@@ -27,9 +30,6 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground")) { isGrounded = true; }
 
-        if (collision.gameObject.CompareTag("Obstacle")) 
-        { 
-            //game over;
-        }
+        if (collision.gameObject.CompareTag("Obstacle")) { Debug.Log("colision"); onPlayerDie?.Invoke(); }
     }
 }
